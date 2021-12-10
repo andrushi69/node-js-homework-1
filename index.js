@@ -19,14 +19,14 @@ const invokeAction = async ({action, id, name, email, phone}) => {
   switch (action) {
     case 'list':
       const contacts = await listContacts()
-      console.log(chalk.bgBlack("Here is the list of contacts"))
+      console.log(chalk.bgBlack("Here is the list of contacts:"))
       console.table(contacts)
       break;
 
     case 'get':
       const contactById = await getContactById(id)
       if (contactById) {
-        console.log(chalk.bgBlack("You find contact by id"))
+        console.log(chalk.bgBlack("You find contact by id:"))
         console.table(contactById)
       } else {
         console.warn(chalk.red("No found contact"));
