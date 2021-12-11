@@ -49,4 +49,7 @@ const invokeAction = async ({action, id, name, email, phone}) => {
   }
 }
 
-invokeAction(argv).then(() => console.log(chalk.green("Success operation"))).catch(() => console.log(chalk.red("Error")))
+
+(async () => {
+  await invokeAction(argv).then(() => console.log(chalk.green("Success operation"))).catch(() => console.log(chalk.red("Error")))
+})()
